@@ -109,8 +109,7 @@ const Index = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <a href="#contacts" className="block group hover:no-underline">
-                <Card key={index} className="group hover:shadow-2xl transition-all duration-300 animate-scale-in border-0 bg-white/80 backdrop-blur-sm hover:-translate-y-2 cursor-pointer">
+              <Card key={index} className="group hover:shadow-2xl transition-all duration-300 animate-scale-in border-0 bg-white/80 backdrop-blur-sm hover:-translate-y-2">
                 <CardHeader className="text-center pb-4">
                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-vibrant-orange to-modern-purple rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                     <Icon name={service.icon} className="w-8 h-8 text-white" />
@@ -124,12 +123,15 @@ const Index = () => {
                   <CardDescription className="text-gray-600 text-base">
                     {service.description}
                   </CardDescription>
-                  <Button variant="outline" className="mt-4 w-full border-vibrant-orange text-vibrant-orange hover:bg-vibrant-orange hover:text-white transition-all">
+                  <Button 
+                    variant="outline" 
+                    className="mt-4 w-full border-vibrant-orange text-vibrant-orange hover:bg-vibrant-orange hover:text-white transition-all"
+                    onClick={() => window.open('https://t.me/Bogdan65829', '_blank')}
+                  >
                     Заказать услугу
                   </Button>
                 </CardContent>
               </Card>
-              </a>
             ))}
           </div>
         </div>
