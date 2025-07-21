@@ -67,8 +67,69 @@ export default function Index() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+      {/* Navigation Header */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-white/20 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 py-3">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full flex items-center justify-center">
+                <Icon name="Zap" className="w-6 h-6 text-white" />
+              </div>
+              <h1 className="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                Умная Волна
+              </h1>
+            </div>
+            
+            <div className="hidden md:flex items-center space-x-6">
+              <button 
+                onClick={() => document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' })}
+                className="text-gray-700 hover:text-indigo-600 transition-colors font-medium"
+              >
+                Главная
+              </button>
+              <button 
+                onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+                className="text-gray-700 hover:text-indigo-600 transition-colors font-medium"
+              >
+                Услуги
+              </button>
+              <button 
+                onClick={() => document.getElementById('advantages')?.scrollIntoView({ behavior: 'smooth' })}
+                className="text-gray-700 hover:text-indigo-600 transition-colors font-medium"
+              >
+                О нас
+              </button>
+              <button 
+                onClick={() => document.getElementById('contacts')?.scrollIntoView({ behavior: 'smooth' })}
+                className="text-gray-700 hover:text-indigo-600 transition-colors font-medium"
+              >
+                Контакты
+              </button>
+              <Button 
+                size="sm"
+                className="bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white"
+                onClick={() => window.open('https://t.me/Bogdan65829', '_blank')}
+              >
+                Заказать
+              </Button>
+            </div>
+            
+            {/* Mobile menu button */}
+            <div className="md:hidden">
+              <Button 
+                size="sm"
+                className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white"
+                onClick={() => window.open('https://t.me/Bogdan65829', '_blank')}
+              >
+                Заказать
+              </Button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
       {/* Hero Section */}
-      <section className="relative py-20 px-4 overflow-hidden">
+      <section id="hero" className="relative py-20 px-4 overflow-hidden mt-16">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 opacity-90"></div>
         <div className="absolute inset-0">
           <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
@@ -130,7 +191,7 @@ export default function Index() {
                   <Button 
                     variant="outline" 
                     className="mt-6 w-full border-indigo-500 text-indigo-600 hover:bg-indigo-500 hover:text-white transition-all duration-300 shadow-sm"
-                    onClick={() => document.getElementById('contacts')?.scrollIntoView({ behavior: 'smooth' })}
+                    onClick={() => window.open('https://t.me/Bogdan65829', '_blank')}
                   >
                     Заказать услугу
                     <Icon name="ArrowRight" className="ml-2 w-4 h-4" />
@@ -143,7 +204,7 @@ export default function Index() {
       </section>
 
       {/* Advantages Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-indigo-600 via-blue-600 to-purple-600">
+      <section id="advantages" className="py-20 px-4 bg-gradient-to-r from-indigo-600 via-blue-600 to-purple-600">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 animate-fade-in">
