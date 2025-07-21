@@ -109,7 +109,8 @@ const Index = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="group hover:shadow-2xl transition-all duration-300 animate-scale-in border-0 bg-white/80 backdrop-blur-sm hover:-translate-y-2">
+              <a href="#contacts" className="block group hover:no-underline">
+                <Card key={index} className="group hover:shadow-2xl transition-all duration-300 animate-scale-in border-0 bg-white/80 backdrop-blur-sm hover:-translate-y-2 cursor-pointer">
                 <CardHeader className="text-center pb-4">
                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-vibrant-orange to-modern-purple rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                     <Icon name={service.icon} className="w-8 h-8 text-white" />
@@ -124,10 +125,11 @@ const Index = () => {
                     {service.description}
                   </CardDescription>
                   <Button variant="outline" className="mt-4 w-full border-vibrant-orange text-vibrant-orange hover:bg-vibrant-orange hover:text-white transition-all">
-                    Узнать больше
+                    Заказать услугу
                   </Button>
                 </CardContent>
               </Card>
+              </a>
             ))}
           </div>
         </div>
